@@ -1,0 +1,180 @@
+Code to upload on github : 
+
+
+Create Repository on git hub and follow the instrction in this modified form.
+1.Go to main root project Folder.
+2.Open cmd / git Bash
+3.run this command:   echo "# Project_PhoneBook_Cloud_Springboot" >> README.md
+4.run this :   git init
+5.run this :   git add README.md
+6.run this :   git add .
+7.run this :   git status
+8.run this:    git commit -m "first commit"
+9.Skip this               command as we are adding in directly master branch //  git branch -M main
+10.run this:   (refer link of repo )git remote add origin https://github.com/Shivamrai714/Project_PhoneBook_Cloud_Springboot.git
+11.run this:   git push -u origin master  (instead of command given in repo )
+
+
+TO OPEN BACKEND API IN SWAGGER , start the project and then http://localhost:9292/swagger-ui/index.html
+
+Give the name to project and install dependecy likes spring web  ,  spring data jpa ,  springboot dev tools ,  lambok , mysql driver etc.
+
+-> Do not run the project now as springboot application , as database and entities are not configured presentlty.
+
+--> Temporarliy removed the lambok (later download the zar file of it and pasted in STS installed folder .)dependecy and var from pom.xml as server is not working.
+
+--> Refer to Diagam to create various packages and their respective entites required.
+
+--> HOw to eable auto-complete in STS/Eclipse Go to window-> preferences -> java -> Editor -> Coding assist and enter all the (alphabets) -> apply save and restart.
+
+-->To correct the problem of Lombok , uncommented the depedcy in pom.xml and update the maven project , and see whether the lombok file is dowloaded in the Maven dependecy folder or not.
+
+BASIC layout of Structure say that. 
+1.Declare the entity eg User
+2.Create Repo interface to access the database / also define customfinder methods
+3.Using Payload dto to send the data of entity to service in indirect form.
+4.Create Services interface ,  to give declaration of all methods like get, create, updatge, delete
+
+IMPORTANT : 
+--> To create the getters setter using the lambox we need to install the jar file of it and need to paste it STS folder. (Refer Video)
+Google  : lombok jar download ,  dowload the file
+Paste this lombok jar file where u have installed the STS and then run it on cmd.
+Open cmd from top path location and run the commad "java -jar lombox.jar" , then choose the icon of STS ide and install and quit and restart the STS IDe.
+
+
+If error comes in the getters/setter after intalling lambox jar file  , just maven update the project.
+
+___________________________________________
+
+
+Now u can generate token and access the protected api.
+
+______________________________________________
+
+SWAGGER API documentation.
+
+
+
+--> In order to use the validation , attach the maven dependecy of validation.
+
+
+__________________________________________
+
+Desinging the basic system of ENTITY , 
+--> then  SERVICES to declare the method of create,update,delete etc , 
+--> REPOSITORY to extend the JPA repo to provide all features. 
+--> Then IMPL Classes to give the implemetation of all the methods defined like create,update,delete etc using obj of Repo.
+
+We have used the Intemediate class UserDto  in payload package which has same property as Entity ,  this is done to protect the original entity exposing to extenal environment, like pass field of entity etc .
+
+-Also made the seperate Exception class to handle the condition when the user is not found . 
+-Made Api Response class to handle the message , after the deltion of the User.
+
+Also just give the annoation of @getter , @Setters etc to ease thec code . -feature of Lombok.
+
+_______________________________________________________________________________________________________________________
+
+Check all the made API on the POSTMAN
+
+POST request to  localhost:9090/api/users
+
+{
+ "name":"Vedansh Singh Rai",
+ "email":"vedanshrai586@gmail.com",
+ "password":"123",
+ "about":"Nice man for all time"
+}
+
+_______________________________________________________________________________________________________________________
+
+
+HOW TO CORRECT THE INTERNAL SERVER ERROR ,  when the unkown id is entered.
+
+-->
+Make a globalException class to handle all the exceptions of Resources Not Found.
+--> 
+Attaching the model mapper maven dependecy . from Google.
+-It is used to covert one class object to other class object.
+-We need to declare the bean for the Modelmapper in main class @SpringBootApplication ,  so we can create the object of it in UserService Impl.
+-For precaution just keep the fields name same in the Two classes User and UserDto
+
+put the validation on the fields of UserDta and add the @Valid   when passed in the fucntion to check for the validation.
+
+_______________________________________________________
+
+"BLOG APP Backend Course"
+"Video ONE good practice that makes your project best"
+
+Adding all the constants of the project in one App constants class". 
+NOw these final varaible can be used anywhere in the project , with classname.variable
+
+____________________________________
+Working on Post Image . 
+
+Just copied the code of FileService from other video (" to how to upload img")
+Also copy the max,min size of image file constants in application.properties (Refer video)
+
+
+__________________________
+
+Now we are done with all entities like user, post ,comment and their related classes.
+
+Appling Spring Security to the Application. 
+- Attach the spring boot starter security in pom.xml. So default username is user and password is default is on console. Now access any api with details on browser.
+  We can also create the manual user and password using the application.properties spring.security.user.name=durgesh spring.security.password=durgesh spring.security.roles=ADMIN
+
+-  Now using the Jwt Authentication to secure the RestFull Apis . 
+- Making a security config class , and extends the WebSecurityconfigureAdap  ter
+- Make the configuration of CustomUserDetailsImpl to validate the users from the database.
+
+____________________________________________________________________
+
+Now to secure the APi using JWT.
+-add dependency jsonwebtoken in pom.xml
+- create jwtauthenticationEntryPoint interface extends Au...
+- create jwtTokenHelper class.(copied from internet)
+-create JwtAuthentacationFilter extends OnceRequestFilter ( to get token validation attached with request)
+- crate jwtAuthResponse
+-configure JWT in spring security config.
+- create login api to generate token with given username and password.
+
+
+_____________________________________________________________
+
+Refer Role Specific API access video.
+
+TO protect any particular api , like delete User api can be accessed by Admin user only . 
+SO use
+
+@EnableGlobalMethodSecurity  in SecurityConfig class.
+
+and use @PreAuthorize("hasRole('ADMIN')")   on each protected method
+
+________________________________________-
+
+IN THIS PROJECT WE HAVE APPLIED THE SPRING SECURITY after making the whole project. 
+
+1.attach the dependecy of io.springfox-boot-starter in pom.xml
+2.@EnableWebMvc
+3.allow url using ant-matchers .antMatchers("/v3/api-docs")
+4.Also add the String[] Public URL in security Config class.
+
+Access swagger config using : http://localhost:9292/swagger-ui/index.html
+5.Make Swagger config class.
+
+
+-Modelmapper class is used to convert one class object to other class.Need to declare the bean in @Springbootapp class.
+ef  this.modelmapper.map(user,UserDto.class);
+
+
+
+-@RequestBody is used to send the json data from the Post man  { "username":"shiv" , ...}
+-@PathVariable is used to fetch the val from url   http:localhost:9292/api/user/2      , so userid=2
+-@RequestParam is used to send the values /images via POSTMAN to project eg used in PAGENATION to send pageNo, // USED In updalod image to Post  etc
+
+
+
+* One bug i found during test is that , the Delete/Update function is not secured from backend ,  Token of Normal user can also be used to detete the post of Admin/other user. And vice versa : THIs is although proteched from frontend ie update/detele button is only shown on posts which are created by the User itself not of the other Users.
+* We can't delete the user , after it has created post. may be issue with mapping.
+
+To view image of the post : Need to enter names of image from the database    asdf4545234dsd54fs6541[sdf]dsf][.png   : Try it in swagger url and open image with Web Borwser 

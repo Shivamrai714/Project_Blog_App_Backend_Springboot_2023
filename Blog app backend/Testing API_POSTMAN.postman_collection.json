@@ -1,0 +1,720 @@
+{
+	"info": {
+		"_postman_id": "567e4a45-4af0-46da-940e-b63a81cd3146",
+		"name": "Testing API_POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Get All Posts Sorted & Pagenated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/posts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Post by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/posts/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Post by User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/user/9/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"9",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Post by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/posts/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Post User - Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTQ3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTM0OTYxLCJpYXQiOjE2NzQ5MTY5NjF9.H7tNpeDgi0vRDS78O-ZeA-sIwYiF_wEwW5i_m0aoW6hTdmXF323Cr-SPL24G6IOPJ066VHWJn9jxu9pXm5Z6Ow",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Trying form POSTMAN\",\r\n\"content\":\"Trying adding from Normal User with Postman\",\r\n\"imageName\":\"default.png\",\r\n\"addedDate\":1674801946000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/user/9/category/1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"9",
+								"category",
+								"1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTM0Nzc2LCJpYXQiOjE2NzQ5MTY3NzZ9.otmlzYhuLAMkrgeXdM_ci4pnNAX8J7IlRrVL9sgnLTlUcZhGsAFaLuF3eBYdlgPbsp3JO1bSE1Bj0AhvTMjGRg",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"title\": \"Trying form POSTMAN Update\",\r\n    \"content\": \"Trying Postman Normal User\",\r\n    \"imageName\": \"default.png\"\r\n   \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/posts/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTM0Nzc2LCJpYXQiOjE2NzQ5MTY3NzZ9.otmlzYhuLAMkrgeXdM_ci4pnNAX8J7IlRrVL9sgnLTlUcZhGsAFaLuF3eBYdlgPbsp3JO1bSE1Bj0AhvTMjGRg",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"title\": \"Trying form POSTMAN Update\",\r\n    \"content\": \"Trying Postman Normal User\",\r\n    \"imageName\": \"default.png\"\r\n   \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/posts/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View image of Post   Enter_names_from_db_with_.jpg",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/post/image/aded9f98-4708-485f-aa55-92a6aab457c9.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"image",
+								"aded9f98-4708-485f-aa55-92a6aab457c9.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Image to Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTQ3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTM0OTYxLCJpYXQiOjE2NzQ5MTY5NjF9.H7tNpeDgi0vRDS78O-ZeA-sIwYiF_wEwW5i_m0aoW6hTdmXF323Cr-SPL24G6IOPJ066VHWJn9jxu9pXm5Z6Ow",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Trying form POSTMAN\",\r\n\"content\":\"Trying adding from Normal User with Postman\",\r\n\"imageName\":\"default.png\",\r\n\"addedDate\":1674801946000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/user/9/category/1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"9",
+								"category",
+								"1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Posts by title Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/posts/search/Try",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"search",
+								"Try"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TOKEN",
+			"item": [
+				{
+					"name": "generate-token-admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"shivamrai714@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generate-token-normal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"shivamrai714714@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GET Single Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTQ3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTUwNDM2LCJpYXQiOjE2NzQ5MzI0MzZ9.imjlB6qYjqeaq4SxwHoJEtTmeGPSafNbVcm04jIih5ZB0b8zl7Fz6zJScKzyqN26NbnL5r_2XDKfZUE8kOTVXw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"categoryId\": 1,\r\n        \"categoryTitle\": \"Tesging\",\r\n        \"categoryDescription\": \"just testing API on POSTMAN\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET   ALL Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTQ3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTUwNDM2LCJpYXQiOjE2NzQ5MzI0MzZ9.imjlB6qYjqeaq4SxwHoJEtTmeGPSafNbVcm04jIih5ZB0b8zl7Fz6zJScKzyqN26NbnL5r_2XDKfZUE8kOTVXw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTQ3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTUwNDM2LCJpYXQiOjE2NzQ5MzI0MzZ9.imjlB6qYjqeaq4SxwHoJEtTmeGPSafNbVcm04jIih5ZB0b8zl7Fz6zJScKzyqN26NbnL5r_2XDKfZUE8kOTVXw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"categoryId\": 1,\r\n        \"categoryTitle\": \"Testing\",\r\n        \"categoryDescription\": \"123N is very nice categoryDescription\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "Add a user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0NjQ4NTA4LCJpYXQiOjE2NzQ2MzA1MDh9.Kbvl5LVZubDFnlGr6Ea1v44RlKwtEZWulX25m7Oyj4QUHBnwuY6VRWjzlP2v_Hz41xVyutAPuWzGveR2pkaYNw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ashu  Rai\",\r\n    \"email\": \"ashurai714@gmail.com\",\r\n    \"password\": \"$2a$10$mjBo3B7ZZ2UZd9lV7hxpCuypw.CA8bH2qX3zHm2pxBfP.om34fQEq\",\r\n    \"about\": \"A programmer of Java\"\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTA0NDc0LCJpYXQiOjE2NzQ4ODY0NzR9.qKdKCYq8cPhtC9fODLz2t8qof9G1fG20XMlnehubOALxCG7979rGdfDMt6W_yPXPCY-Ca50tcBkcRjRpQ9G_AQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 5,\r\n        \"name\": \"Ashu Kumar  Rai\",\r\n        \"email\": \"ashu@gmail.com\",\r\n        \"about\": \"A programmer of Java of Application\",\r\n        \"password\":\"123\",\r\n        \"roles\": [\r\n            {\r\n                \"id\": 11,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/users/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTA0NDc0LCJpYXQiOjE2NzQ4ODY0NzR9.qKdKCYq8cPhtC9fODLz2t8qof9G1fG20XMlnehubOALxCG7979rGdfDMt6W_yPXPCY-Ca50tcBkcRjRpQ9G_AQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 5,\r\n        \"name\": \"Ashu Kumar  Rai\",\r\n        \"email\": \"ashu@gmail.com\",\r\n        \"about\": \"A Dub of Java of Application\",\r\n        \"password\":\"123\",\r\n        \"roles\": [\r\n            {\r\n                \"id\": 11,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9292/api/v1/users/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl2YW1yYWk3MTRAZ21haWwuY29tIiwiZXhwIjoxNjc0OTA0NDc0LCJpYXQiOjE2NzQ4ODY0NzR9.qKdKCYq8cPhtC9fODLz2t8qof9G1fG20XMlnehubOALxCG7979rGdfDMt6W_yPXPCY-Ca50tcBkcRjRpQ9G_AQ",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9292/api/v1/users/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9292",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete check by normal user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/users/52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"users",
+								"52"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

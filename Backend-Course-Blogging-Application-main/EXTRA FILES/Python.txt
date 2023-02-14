@@ -1,0 +1,113 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+# print("Hello World")
+# a=5
+# b=6
+# print(type(a+b))
+# print(a+b)
+
+# name="shivaM Rai is my name"
+# age=23
+# print(name+str(age))
+# print(name.capitalize())
+# print(name.find("aM"))
+# print(name.upper())
+# print(name.lower())
+
+
+# List 
+item=[1,2,3,"Ravi"]
+print(type(item))
+item[0]=100
+print(item)
+print()
+
+# tuple
+tup1=("Val can't be changed",5,4)
+print(tup1)
+print(type(tup1))
+print()
+
+#dictonary
+dict1={} 
+print(type(dict1))
+dict1["Virat"]=100
+dict1["Sachin"]=500
+dict1["Shivam"]="Rai"
+
+print(dict1)
+print(dict1.get("Shivam"))
+print(dict1.items())
+print(dict1.keys())
+print(dict1.values())
+
+print()
+
+list2=[1,60,21,1]
+print(list2)
+set1=set(list2)
+print( "Set : Type casting to set & it remove duplicate : "+ str(set1))
+print()
+
+print("My Age is ",20);
+
+#Input from USer
+print("Enter a number : ")
+var = int(input())
+print("The number entered is  "+str(var))
+
+if(var % 2 == 0 ):
+    print("Even no ")
+elif(var % 2 !=0 ):
+    print("Odd No")
+else:
+    print("Not a number")
+    
+
+#Loops 
+print()
+print("For loop i is auto incremented")
+for i in range(0,101):
+    print("number "+str(i))
+
+print()
+print("While loop, also incremented i")
+i=0
+while(i<5):
+    print(i)
+    i=i+1
+
+
+print()    
+
+#Function 
+
+def average(num1,num2):
+    avg=(num1+num2)/2
+    return avg
+
+print("Function to find avg ",average(5,6))
+
+print()
+print("Exception Handle")
+
+try:
+    print(index)
+except Exception as e: 
+    print(e)
+
+
+# print()
+# print("File opening : ")
+# f=open("Photograph.jpg","r")
+# content=f.read();
+# f.close()
+# print(content)
+
+

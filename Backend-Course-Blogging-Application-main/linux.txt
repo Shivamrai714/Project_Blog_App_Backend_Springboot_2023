@@ -1,0 +1,126 @@
+Linux commands tutorial.
+
+make sure to choose "BridgeAdapter" if u want your linux to communicate.
+
+1. ifconfig    -  gives the ip address of virtual machine system.
+2. clear
+3. apt-get update && apt-get upgrade  - run this command on 1 times starting the system.
+4. uname -r (recursive) , uname -a (all) related to virsion of linux.
+5. ls -l         -> to list all the directories.
+6. cd ..         -> catch directory (go back)
+7. /# - represent the user directory , then do cd   ~# - represent the root directory.
+8. To create a file  --> touch test.txt
+9.  TO remove a file  --> rm test.txt
+10. TO make a folder --> mkdir shivam
+11. To remove a folder --> rmdir shivam
+12. To get help   --> man ls           or -help
+13. To copy a file -> cp test /home/
+14. Giving the permissions
+    ->list all permissions  :   ls -l test     (admin : ___ , group: ___ , public ___ )
+    ->to change the permission :  chmod 
+     where
+         1 execute
+         2 write 
+         4 read
+
+To grant the permission as following manner admin rwx (read , write , executable) so code is  4+2+1
+  admin rwx 4+2+1
+  group rw  4+2
+  public r  4
+
+Therefore to grant these permissions to test file  ->  chmod 764 test  : Hence admin can read ,write,execute & group can read ,write  & public can read only
+
+
+
+Practice on LabEx
+1.cd        :change directory
+2.cd -      : previous open directory
+3.cd ..     : back 1 setep 
+4.pwd       : path of working directory
+5.ll /ls -alh : list all files
+5.touch     : create a text file
+
+6.mkdir     : create folder  ,   eg  ( mkdir -m  467 shivam ) : will create a folder with admin read , group read,write  ,  public read,write,execute permissions.    ........ 6.mkdir      
+	To create mutilple folders : To update and install :    sudo apt-get update      ..    sudo apt-get install tree  ::: mkdir -vp shiyanlou/{lib/,bin/,doc/{info,product}}      ...   tree shiyanlou/        
+	To crate inner structure  :  mkdir -p  1Folder/2Folder/3Folder   :  to view   tree 1Folder
+	To create with permission L  mkdir -m 777 NewFolder
+        To display messsge after directory creation : mkdir -vp Folder/testfolder    
+
+
+7.rm  :     remove :   rm filename.txt         delete folder ,  rmdir -f foldername  , rm -i *.txt
+8.mv  :   rename/move files :   To rename exiting shiv.txt file with new file , mv shiv.txt rai.txt
+                                 TO move files :  mv shiv.txt Folder
+9.cp  :      To copy data   cp -t NewFolder file.text file2.text 
+10.cat  :  to display content of file in numberring format   (also can combine several file)
+    cat >> file.txt    : To add content to exiting file .  Press Ctrl+D to save  ,      try q
+    cat > file.txt  :  add content to new one.     
+ 
+11.nl  - number of line is displayed with test excluding empty line no. /  cat -n temp.txt : it also counts the empty lines 
+
+11.To create new file and write :   cat > file1.txt   .  and then write the text .   save it using CTrl + D
+12: Display content :  cat shiv.txt
+
+13.more  :  display file       more  file.txt    (+5 to display from 5 line  , -10 to show only ten lines in page )
+14. less -N file.txt        . then press q    : Display text with numbers. ,   less lab.log   then enter text to search   /serachme    .... q to quit
+
+
+15.head : to display first n lines  :  head -n 5 lab.log text.txt
+16.tail :   tail -5 lab.log
+17:which : display path   which gcc    :  /usr/bin/gcc
+18.whereis  :      whereis gcc           , -m -s
+
+19. find  : to seach file with .txt file extension. 
+           find . -name "*.txt" -print |head -10     (display 10 )
+            to search file other then .txt files
+            find . ! -name "*.txt"
+    MANY MORE COMMANDS IN Find
+
+20.ln :     ln -s a.txt hello.txt    :  to create the link of file   ,  use ll command to see .
+21.xargs :   is used to change mutli-line input , to one line output types.eg    cat a.txt | xargs
+                 To change 1-line  input to multi line o/p  :   echo " 1 2 3 4 5 6 8 " | xargs -n 3 
+
+
+22. wc  -  word count.  wc -c file.txt
+23. grep - count occurences of word   grep -c "pattern" c.txt
+         - Also used to check regular expression  --    grep '^..j.r$' linux.words          
+         - to search regular ex :  grep -E "0[0-9]{2,3}-[0,9]{7,8}(-[0,9]{3,4})?$" phone.txt
+
+              
+4cV$Svzj_f*_yM.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A regular expression is a symbolic representation that is used to identify text patterns. To some extent, they are similar to shell wildcards that match file and path names, but they are larger. Many command-line tools and most programming languages support regular expressions to help solve text manipulation problems.
+
+Regular expression metacharacters consist of the following characters:
+
+^ $ . [ ] { } - ? * + ( ) | \
+
+Regular Description	                          Example
+^	Line start marker.	^labex matches rows starting with labex.
+$	End-of-line marker.	labex$ matches rows ending with labex.
+.	Match any character.	a.c matches abc, aac but does not match abbc.
+[ ]	Match any character contained in [Character].	ab[cd] matches abc or abd.
+[^ ]	Match any character except the characters in [^character].	1[^01] matches 12, 13 but does not match 10, 11.
+[ - ]	Match any character within the specified range.	[1-5] matches any number from 1 to 5.
+{n}	Match the previous item n times.	[0-9]{2} matches any two-digit number, which is equivalent to [0-9][0-9].
+{n,}	The previous item needs to match at least n times.	[0-9]{2,} matches a number with two or more digits.
+{n,m}	Specify the minimum and the maximum number of times the previous item needs to match.	[0-9]{2,5} matches any number from two digits to five digits.
+?	Match the previous item 1 or 0 times.	lab?ex matches labex, laex.
+*	Match the previous item 0 or more times.	lab*ex matches laex, labex, labbex.
++	Match the previous item 1 or more times.	lab+ex matches labex, labbex.
+( )	Create a substring for matching.	Ma(in)? matches ma or main.
+&#124;	Match any of the two sides of &#124;.	Dec (1st&#124;2nd) matches Dec 1st or Dec 2nd.
+\	Escape special characters above so as to treat them literally.	a\+b matches a+b.
